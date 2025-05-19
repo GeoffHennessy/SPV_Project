@@ -336,10 +336,10 @@ V = np.arange(-0.11, 1, 0.0001)
 
 # Call the functions here
 IntersectionGraph(V,0.2,T,Nt,nb,pb,eps,Qss,Qsc,ohm,LD)
-# VvsNb(100,5,E,T,Nt,Qss,Qsc,ohm,LD) # nb start is the power of nb. So nbStart = 7 would set nb to 10^7
-# VvsE(150,-0.4,100,Nt,nb,pb,Qss,Qsc,ohm,LD)
-VvsT(500,100,E,Nt,nb,pb,Qss,Qsc,ohm,LD) #VvsT(Resolution,TStart,E,Nt,nb,pb,function1,function2,function3,function4)
-# VvsPb(150,8,E,T,Nt,Qss,Qsc,ohm,LD)
+VvsNb(100,5,E,T,Nt,Qss,Qsc,ohm,LD) # nb start is the power of nb. So nbStart = 7 would set nb to 10^7
+# VvsE(150,-0.4,293.15,Nt,nb,pb,Qss,Qsc,ohm,LD)
+# VvsT(500,100,E,Nt,nb,pb,Qss,Qsc,ohm,LD) #VvsT(Resolution,TStart,E,Nt,nb,pb,function1,function2,function3,function4)
+VvsPb(150,8,E,T,Nt,Qss,Qsc,ohm,LD)
 # EAndTMap(-0.5,1,100,600,Nt,nb,pb,Qss,Qsc,ohm,LD) # Paramerters (Estart,Eend,Tstart,Tend...)
 # NbvsPb(5,18,3,E,T,Nt,Qss,Qsc,ohm,LD)
 # TvsPb(100,351,8,18,E,Nt,Qss,Qsc,ohm,LD)
