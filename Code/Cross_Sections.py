@@ -31,14 +31,10 @@ def Qsc(voltage,T,eps,nb,pb):
     return (eps * np.sqrt(2) * k * T / (e * LD(T,eps,pb)) * ((np.exp(-ohm(voltage,T)) + ohm(voltage,T) - 1) +
     (nb / pb) * (np.exp(ohm(voltage,T)) - ohm(voltage,T) - 1)) ** (1 / 2))
 
-def intersection(voltage,E,T,Nt,nb,pb):
-    Plot1 = Qss(voltage,E,T,Nt)
-    Plot2 = Qsc(voltage,T,eps,nb,pb)
-    return(Plot2-Plot1)
-
 def intersection(voltage, *args):
     E,T,Nt,nb,pb,eps = args
     return Qsc(voltage,T,eps,nb,pb) - Qss(voltage,E,T,Nt)
+
 
 # For Graph functions, args will always be default values
 def VvsE(E):
@@ -278,6 +274,36 @@ for i in NbVals:
     VNbE_data6.append(V_Val)
 
 E = 0.2
+
+# Graph 11 (Nb vs Pb cross sections)
+VNbPb_data1, VNbPb_data2, VNbPb_data3, VNbPb_data4, VNbPb_data5 = [], [], [], [], []
+NbVals = np.logspace(6,18,1000)
+
+pb0 = 1e9
+for i in NbVals:
+    V_Val = VvsNb(i,pb0/i)
+    VNbPb_data1.append(V_Val)
+
+pb0 = 1e12
+for i in NbVals:
+    V_Val = VvsNb(i,pb0/i)
+    VNbPb_data2.append(V_Val)
+
+pb0 = 1e15
+for i in NbVals:
+    V_Val = VvsNb(i,pb0/i)
+    VNbPb_data3.append(V_Val)
+
+pb0 = 1e18
+for i in NbVals:
+    V_Val = VvsNb(i,pb0/i)
+    VNbPb_data4.append(V_Val)
+    
+pb0 = 1e21
+for i in NbVals:
+    V_Val = VvsNb(i,pb0/i)
+    VNbPb_data5.append(V_Val)
+
 #%%%%%%%%%%%%%%%%%%%%%%%%
 # Generating Graph
 
@@ -314,73 +340,86 @@ E = 0.2
 # ax5.plot(NbVals, VNb_Vals)
 
 
-# Graph 6
+# # Graph 6
 
-fig6 = plt.figure(figsize = (10,10))
-ax6 = plt.subplot()
-ax6.set_title("V Vs E")
-ax6. plot(EVals,VE_data1, label = "T = 100")
-ax6. plot(EVals,VE_data2, label = "T = 150")
-ax6. plot(EVals,VE_data3, label = "T = 200")
-ax6. plot(EVals,VE_data4, label = "T = 250")
-ax6. plot(EVals,VE_data5, label = "T = 300")
-ax6. plot(EVals,VE_data6, label = "T = 350")
+# fig6 = plt.figure(figsize = (10,10))
+# ax6 = plt.subplot()
+# ax6.set_title("V Vs E")
+# ax6.plot(EVals,VE_data1, label = "T = 100")
+# ax6.plot(EVals,VE_data2, label = "T = 150")
+# ax6.plot(EVals,VE_data3, label = "T = 200")
+# ax6.plot(EVals,VE_data4, label = "T = 250")
+# ax6.plot(EVals,VE_data5, label = "T = 300")
+# ax6.plot(EVals,VE_data6, label = "T = 350")
+
+# # Graph 7
+
+# fig7 = plt.figure(figsize = (10,10))
+# ax7 = plt.subplot()
+# ax7.set_title("V Vs Pb")
+# ax7.set_xscale("log")
+# ax7.plot(PbVals,VPBT_data1, label = "T = 100")
+# ax7.plot(PbVals,VPBT_data2, label = "T = 150")
+# ax7.plot(PbVals,VPBT_data3, label = "T = 200")
+# ax7.plot(PbVals,VPBT_data4, label = "T = 250")
+# ax7.plot(PbVals,VPBT_data5, label = "T = 300")
+# ax7.plot(PbVals,VPBT_data6, label = "T = 350")
+# ax7.legend()
+
+# # Graph 8
+
+# fig8 = plt.figure(figsize = (10,10))
+# ax8 = plt.subplot()
+# ax8.set_title("V Vs Pb")
+# ax8.set_xscale("log")
+# ax8.plot(PbVals,VPBE_data1, label = "E = -0.4")
+# ax8.plot(PbVals,VPBE_data2, label = "E = -0.2")
+# ax8.plot(PbVals,VPBE_data3, label = "E = 0.0")
+# ax8.plot(PbVals,VPBE_data4, label = "E = 0.2")
+# ax8.plot(PbVals,VPBE_data5, label = "E = 0.4")
+# ax8.plot(PbVals,VPBE_data6, label = "E = 0.6")
+# ax8.legend()
+# plt.show()
+
+# # Graph 9
+
+# fig9 = plt.figure(figsize = (10,10))
+# ax9 = plt.subplot()
+# ax9.set_xscale("log")
+# ax9.set_title("V vs Nb")
+# ax9.plot(NbVals,VNbT_data1, label = "T = 100")
+# ax9.plot(NbVals,VNbT_data2, label = "T = 150")
+# ax9.plot(NbVals,VNbT_data3, label = "T = 200")
+# ax9.plot(NbVals,VNbT_data4, label = "T = 250")
+# ax9.plot(NbVals,VNbT_data5, label = "T = 300")
+# ax9.plot(NbVals,VNbT_data6, label = "T = 350")
+# ax9.legend()
+
+# # Graph 10
+
+# fig10 = plt.figure(figsize = (10,10))
+# ax10 = plt.subplot()
+# ax10.set_xscale("log")
+# ax10.set_title("V vs Nb")
+# ax10.plot(NbVals,VNbE_data1, label = "E = -0.4")
+# ax10.plot(NbVals,VNbE_data2, label = "E = -0.2")
+# ax10. plot(NbVals,VNbE_data3, label = "E = 0")
+# ax10. plot(NbVals,VNbE_data4, label = "E = 0.2")
+# ax10. plot(NbVals,VNbE_data5, label = "E = 0.4")
+# ax10. plot(NbVals,VNbE_data6, label = "E = 0.6")
+# ax10.legend()
+
+# Graph 11
+
+fig11 = plt.figure(figsize = (10,10))
+ax11 = plt.subplot()
+ax11.set_xscale("log")
+ax11.set_title("V vs Nb")
+ax11. plot(NbVals,VNbPb_data1, label = "Pb = 1e9")
+ax11. plot(NbVals,VNbPb_data2, label = "Pb = 1e12")
+ax11. plot(NbVals,VNbPb_data3, label = "Pb = 1e15")
+ax11. plot(NbVals,VNbPb_data4, label = "Pb = 1e18")
+ax11. plot(NbVals,VNbPb_data5, label = "Pb = 1e21")
+ax11.legend()
 
 plt.show()
-
-# Graph 7
-
-fig7 = plt.figure(figsize = (10,10))
-ax7 = plt.subplot()
-ax7.set_title("V Vs Pb")
-ax7.set_xscale("log")
-ax7. plot(PbVals,VPBT_data1, label = "T = 100")
-ax7. plot(PbVals,VPBT_data2, label = "T = 150")
-ax7. plot(PbVals,VPBT_data3, label = "T = 200")
-ax7. plot(PbVals,VPBT_data4, label = "T = 250")
-ax7. plot(PbVals,VPBT_data5, label = "T = 300")
-ax7. plot(PbVals,VPBT_data6, label = "T = 350")
-ax7.legend()
-
-# Graph 8
-
-fig8 = plt.figure(figsize = (10,10))
-ax8 = plt.subplot()
-ax8.set_title("V Vs Pb")
-ax8.set_xscale("log")
-ax8. plot(PbVals,VPBE_data1, label = "E = -0.4")
-ax8. plot(PbVals,VPBE_data2, label = "E = -0.2")
-ax8. plot(PbVals,VPBE_data3, label = "E = 0.0")
-ax8. plot(PbVals,VPBE_data4, label = "E = 0.2")
-ax8. plot(PbVals,VPBE_data5, label = "E = 0.4")
-ax8. plot(PbVals,VPBE_data6, label = "E = 0.6")
-ax8.legend()
-plt.show()
-
-# Graph 9
-
-fig9 = plt.figure(figsize = (10,10))
-ax9 = plt.subplot()
-ax9.set_xscale("log")
-ax9.set_title("V vs Nb")
-ax9. plot(NbVals,VNbT_data1, label = "T = 100")
-ax9. plot(NbVals,VNbT_data2, label = "T = 150")
-ax9. plot(NbVals,VNbT_data3, label = "T = 200")
-ax9. plot(NbVals,VNbT_data4, label = "T = 250")
-ax9. plot(NbVals,VNbT_data5, label = "T = 300")
-ax9. plot(NbVals,VNbT_data6, label = "T = 350")
-ax9.legend()
-
-# Graph 10
-
-fig10 = plt.figure(figsize = (10,10))
-ax9 = plt.subplot()
-ax9.set_xscale("log")
-ax9.set_title("V vs Nb")
-ax9. plot(NbVals,VNbE_data1, label = "E = -0.4")
-ax9. plot(NbVals,VNbE_data2, label = "E = -0.2")
-ax9. plot(NbVals,VNbE_data3, label = "E = 0")
-ax9. plot(NbVals,VNbE_data4, label = "E = 0.2")
-ax9. plot(NbVals,VNbE_data5, label = "E = 0.4")
-ax9. plot(NbVals,VNbE_data6, label = "E = 0.6")
-ax9.legend()
