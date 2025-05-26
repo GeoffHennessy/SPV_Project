@@ -307,107 +307,130 @@ for i in NbVals:
 #%%%%%%%%%%%%%%%%%%%%%%%%
 # Generating Graph
 
-# # Graph 1
-# fig1 = plt.figure(figsize = (10,10))
-# ax1 = plt.subplot()
-# ax1.plot(VVals,QssVals, c = "orange", label = "Qss")
-# ax1.plot(VVals,QscVals, c = "blue", label = "Qsc")
-# ax1.set_yscale("log")
-# ax1.legend()
+# Graph 1
+fig1 = plt.figure(figsize = (10,10))
+ax1 = plt.subplot()
+ax1.plot(VVals,QssVals, c = "orange", label = "Qss")
+ax1.plot(VVals,QscVals, c = "blue", label = "Qsc")
+ax1.set_yscale("log")
+ax1.set_xlabel("Surface Potential (V)")
+ax1.set_ylabel("Charge Densities (C/cm)")
+ax1.legend()
 
-# # Graph 2
-# fig2 = plt.figure(figsize = (10,10))
-# ax2 = plt.subplot()
-# ax2.plot(TVals,VT_Vals)
-# plt.show()
+# Graph 2
+fig2 = plt.figure(figsize = (10,10))
+ax2 = plt.subplot()
+ax2.plot(TVals,VT_Vals)
+ax2.set_title("Surface Voltage vs Temperature")
+ax2.set_xlabel("Temperature (k)")
+ax2.set_ylabel("Surface Voltage (V)")
 
-# # Graph 3
-# fig3 = plt.figure(figsize = (10,10))
-# ax3 = plt.subplot()
-# ax3.plot(EVals, VE_Vals)
+# Graph 3
+fig3 = plt.figure(figsize = (10,10))
+ax3 = plt.subplot()
+ax3.plot(EVals, VE_Vals)
+ax3.set_title("Surface Voltage vs Energy Difference")
+ax3.set_xlabel("Energy (J)")
+ax3.set_ylabel("Surface Voltage (V)")
 
-# # Graph 4
-# fig4 = plt.figure(figsize = (10,10))
-# ax4 = plt.subplot()
-# ax4.set_xscale("log")
-# ax4.plot(PbVals, VPb_Vals)
-# plt.show()
-
-# # Graph 5
-# fig5 = plt.figure(figsize = (10,10))
-# ax5 = plt.subplot()
-# ax5.set_xscale("log")
-# ax5.plot(NbVals, VNb_Vals)
+# Graph 4
+fig4 = plt.figure(figsize = (10,10))
+ax4 = plt.subplot()
+ax4.set_xscale("log")
+ax4.plot(PbVals, VPb_Vals)
+ax4.set_title("Surface Voltage vs Hole Density")
+ax4.set_xlabel("Hole Density (C/cm)")
+ax4.set_ylabel("Surface Voltage (V)")
 
 
-# # Graph 6
+# Graph 5
+fig5 = plt.figure(figsize = (10,10))
+ax5 = plt.subplot()
+ax5.set_xscale("log")
+ax5.plot(NbVals, VNb_Vals)
+ax5.set_title("Surface Voltage vs Carrier Density")
+ax5.set_xlabel("Carrier Density (C/cm)")
+ax5.set_ylabel("Surface Voltage (V)")
 
-# fig6 = plt.figure(figsize = (10,10))
-# ax6 = plt.subplot()
-# ax6.set_title("V Vs E")
-# ax6.plot(EVals,VE_data1, label = "T = 100")
-# ax6.plot(EVals,VE_data2, label = "T = 150")
-# ax6.plot(EVals,VE_data3, label = "T = 200")
-# ax6.plot(EVals,VE_data4, label = "T = 250")
-# ax6.plot(EVals,VE_data5, label = "T = 300")
-# ax6.plot(EVals,VE_data6, label = "T = 350")
 
-# # Graph 7
+# Graph 6
 
-# fig7 = plt.figure(figsize = (10,10))
-# ax7 = plt.subplot()
-# ax7.set_title("V Vs Pb")
-# ax7.set_xscale("log")
-# ax7.plot(PbVals,VPBT_data1, label = "T = 100")
-# ax7.plot(PbVals,VPBT_data2, label = "T = 150")
-# ax7.plot(PbVals,VPBT_data3, label = "T = 200")
-# ax7.plot(PbVals,VPBT_data4, label = "T = 250")
-# ax7.plot(PbVals,VPBT_data5, label = "T = 300")
-# ax7.plot(PbVals,VPBT_data6, label = "T = 350")
-# ax7.legend()
+fig6 = plt.figure(figsize = (10,10))
+ax6 = plt.subplot()
+ax6.set_title("V vs E")
+ax6.set_ylabel("Surface Voltage")
+ax6.set_xlabel("Energy Difference")
+ax6.plot(EVals,VE_data1, label = "T = 100")
+ax6.plot(EVals,VE_data2, label = "T = 150")
+ax6.plot(EVals,VE_data3, label = "T = 200")
+ax6.plot(EVals,VE_data4, label = "T = 250")
+ax6.plot(EVals,VE_data5, label = "T = 300")
+ax6.plot(EVals,VE_data6, label = "T = 350")
 
-# # Graph 8
+# Graph 7
 
-# fig8 = plt.figure(figsize = (10,10))
-# ax8 = plt.subplot()
-# ax8.set_title("V Vs Pb")
-# ax8.set_xscale("log")
-# ax8.plot(PbVals,VPBE_data1, label = "E = -0.4")
-# ax8.plot(PbVals,VPBE_data2, label = "E = -0.2")
-# ax8.plot(PbVals,VPBE_data3, label = "E = 0.0")
-# ax8.plot(PbVals,VPBE_data4, label = "E = 0.2")
-# ax8.plot(PbVals,VPBE_data5, label = "E = 0.4")
-# ax8.plot(PbVals,VPBE_data6, label = "E = 0.6")
-# ax8.legend()
-# plt.show()
+fig7 = plt.figure(figsize = (10,10))
+ax7 = plt.subplot()
+ax7.set_title("V vs Pb")
+ax7.set_ylabel("Surface Voltage")
+ax7.set_xlabel("Hole Density")
+ax7.set_xscale("log")
+ax7.plot(PbVals,VPBT_data1, label = "T = 100")
+ax7.plot(PbVals,VPBT_data2, label = "T = 150")
+ax7.plot(PbVals,VPBT_data3, label = "T = 200")
+ax7.plot(PbVals,VPBT_data4, label = "T = 250")
+ax7.plot(PbVals,VPBT_data5, label = "T = 300")
+ax7.plot(PbVals,VPBT_data6, label = "T = 350")
+ax7.legend()
 
-# # Graph 9
+# Graph 8
 
-# fig9 = plt.figure(figsize = (10,10))
-# ax9 = plt.subplot()
-# ax9.set_xscale("log")
-# ax9.set_title("V vs Nb")
-# ax9.plot(NbVals,VNbT_data1, label = "T = 100")
-# ax9.plot(NbVals,VNbT_data2, label = "T = 150")
-# ax9.plot(NbVals,VNbT_data3, label = "T = 200")
-# ax9.plot(NbVals,VNbT_data4, label = "T = 250")
-# ax9.plot(NbVals,VNbT_data5, label = "T = 300")
-# ax9.plot(NbVals,VNbT_data6, label = "T = 350")
-# ax9.legend()
+fig8 = plt.figure(figsize = (10,10))
+ax8 = plt.subplot()
+ax8.set_title("V vs Pb")
+ax8.set_ylabel("Surface Voltage")
+ax8.set_xlabel("Hole Density")
+ax8.set_xscale("log")
+ax8.plot(PbVals,VPBE_data1, label = "E = -0.4")
+ax8.plot(PbVals,VPBE_data2, label = "E = -0.2")
+ax8.plot(PbVals,VPBE_data3, label = "E = 0.0")
+ax8.plot(PbVals,VPBE_data4, label = "E = 0.2")
+ax8.plot(PbVals,VPBE_data5, label = "E = 0.4")
+ax8.plot(PbVals,VPBE_data6, label = "E = 0.6")
+ax8.legend()
 
-# # Graph 10
 
-# fig10 = plt.figure(figsize = (10,10))
-# ax10 = plt.subplot()
-# ax10.set_xscale("log")
-# ax10.set_title("V vs Nb")
-# ax10.plot(NbVals,VNbE_data1, label = "E = -0.4")
-# ax10.plot(NbVals,VNbE_data2, label = "E = -0.2")
-# ax10. plot(NbVals,VNbE_data3, label = "E = 0")
-# ax10. plot(NbVals,VNbE_data4, label = "E = 0.2")
-# ax10. plot(NbVals,VNbE_data5, label = "E = 0.4")
-# ax10. plot(NbVals,VNbE_data6, label = "E = 0.6")
-# ax10.legend()
+# Graph 9
+
+fig9 = plt.figure(figsize = (10,10))
+ax9 = plt.subplot()
+ax9.set_xscale("log")
+ax9.set_title("V vs Nb")
+ax9.set_ylabel("Surface Voltage")
+ax9.set_xlabel("Carrier Denisty")
+ax9.plot(NbVals,VNbT_data1, label = "T = 100")
+ax9.plot(NbVals,VNbT_data2, label = "T = 150")
+ax9.plot(NbVals,VNbT_data3, label = "T = 200")
+ax9.plot(NbVals,VNbT_data4, label = "T = 250")
+ax9.plot(NbVals,VNbT_data5, label = "T = 300")
+ax9.plot(NbVals,VNbT_data6, label = "T = 350")
+ax9.legend()
+
+# Graph 10
+
+fig10 = plt.figure(figsize = (10,10))
+ax10 = plt.subplot()
+ax10.set_xscale("log")
+ax10.set_title("V vs Nb")
+ax10.set_ylabel("Surface Voltage")
+ax10.set_xlabel("Carrier Density")
+ax10.plot(NbVals,VNbE_data1, label = "E = -0.4")
+ax10.plot(NbVals,VNbE_data2, label = "E = -0.2")
+ax10. plot(NbVals,VNbE_data3, label = "E = 0")
+ax10. plot(NbVals,VNbE_data4, label = "E = 0.2")
+ax10. plot(NbVals,VNbE_data5, label = "E = 0.4")
+ax10. plot(NbVals,VNbE_data6, label = "E = 0.6")
+ax10.legend()
 
 # Graph 11
 
@@ -415,6 +438,8 @@ fig11 = plt.figure(figsize = (10,10))
 ax11 = plt.subplot()
 ax11.set_xscale("log")
 ax11.set_title("V vs Nb")
+ax11.set_ylabel("Surface Voltage")
+ax11.set_xlabel("Carrier Density")
 ax11. plot(NbVals,VNbPb_data1, label = "Pb = 1e9")
 ax11. plot(NbVals,VNbPb_data2, label = "Pb = 1e12")
 ax11. plot(NbVals,VNbPb_data3, label = "Pb = 1e15")

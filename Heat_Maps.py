@@ -182,82 +182,100 @@ pb0, E0 = 1e15, .2
 #%%%%%%%%%%%
 # Graphing results
 
-# #Graph 1:
-# fig1 = plt.figure(figsize = (10,10))
-# ax1 = plt.subplot()
-# ax1.set_title("E Vs T")
-# xticks = np.arange(-0.4-0.4,0.2)
-# yticks = np.arange(100,400,50)
-# graph1 = ax1.pcolormesh(Evals,Tvals,grid1)
-# bar = fig1.colorbar(graph1)
+#Graph 1:
+fig1 = plt.figure(figsize = (10,10))
+ax1 = plt.subplot()
+ax1.set_title("E Vs T")
+ax1.set_xlabel("Energy Difference")
+ax1.set_ylabel("Temperature")
+xticks = np.arange(-0.4-0.4,0.2)
+yticks = np.arange(100,400,50)
+graph1 = ax1.pcolormesh(Evals,Tvals,grid1)
+bar = fig1.colorbar(graph1)
 
-# #Graph 2:
-# fig2 = plt.figure(figsize = (10,10))
-# ax2 = plt.subplot()
-# ax2.set_title("Pb vs Nb")
-# ax2.set_xscale("log")
-# ax2.set_yscale("log")
-# graph2 = ax2.pcolormesh(Pbvals,Nbvals,grid2)
-# bar = fig2.colorbar(graph2)
-
-
-# #Graph 3:
-# fig3 = plt.figure(figsize = (10,10))
-# ax3= plt.subplot()
-# ax3.set_title("T Vs Pb")
-# ax3.set_yscale("log")
-# graph3 = ax3.pcolormesh(Tvals,Pbvals,grid3)
-# bar = fig3.colorbar(graph3)
+#Graph 2:
+fig2 = plt.figure(figsize = (10,10))
+ax2 = plt.subplot()
+ax2.set_title("Pb vs Nb")
+ax2.set_xlabel("Hole Density")
+ax2.set_ylabel("Carrier Density")
+ax2.set_xscale("log")
+ax2.set_yscale("log")
+graph2 = ax2.pcolormesh(Pbvals,Nbvals,grid2)
+bar = fig2.colorbar(graph2)
 
 
-# #Graph 4:
-# fig4 = plt.figure(figsize = (10,10))
-# ax4= plt.subplot()
-# ax4.set_title("E Vs Pb")
-# ax4.set_yscale("log")
-# graph4 = ax4.pcolormesh(Evals,Pbvals,grid4)
-# bar = fig4.colorbar(graph4)
+#Graph 3:
+fig3 = plt.figure(figsize = (10,10))
+ax3= plt.subplot()
+ax3.set_title("T Vs Pb")
+ax3.set_xlabel("Temperature")
+ax3.set_ylabel("Hole Density")
+ax3.set_yscale("log")
+graph3 = ax3.pcolormesh(Tvals,Pbvals,grid3)
+bar = fig3.colorbar(graph3)
 
 
-# #Graph 5:
-# fig5 = plt.figure(figsize = (10,10))
-# ax5= plt.subplot()
-# ax5.set_title("T vs Nb (Pb/Nb is constant)")
-# ax5.set_yscale("log")
-# graph5 = ax5.pcolormesh(Tvals,Nbvals,grid5)
-# bar = fig5.colorbar(graph5)
+#Graph 4:
+fig4 = plt.figure(figsize = (10,10))
+ax4= plt.subplot()
+ax4.set_title("E Vs Pb")
+ax4.set_xlabel("Energy Difference")
+ax4.set_ylabel("Hole Density")
+ax4.set_yscale("log")
+graph4 = ax4.pcolormesh(Evals,Pbvals,grid4)
+bar = fig4.colorbar(graph4)
 
 
-# #Graph 6:
-# fig6 = plt.figure(figsize = (10,10))
-# ax6= plt.subplot()
-# ax6.set_title("E vs Nb (Pb/Nb is constant)")
-# ax6.set_yscale("log")
-# graph6 = ax6.pcolormesh(Evals,Nbvals,grid6)
-# bar = fig6.colorbar(graph6)
+#Graph 5:
+fig5 = plt.figure(figsize = (10,10))
+ax5= plt.subplot()
+ax5.set_title("T vs Nb (Pb/Nb is constant)")
+ax5.set_xlabel("Temperature")
+ax5.set_ylabel("Carrier Density")
+ax5.set_yscale("log")
+graph5 = ax5.pcolormesh(Tvals,Nbvals,grid5)
+bar = fig5.colorbar(graph5)
 
 
-# #Graph 7:
-# fig7 = plt.figure(figsize = (10,10))
-# ax7= plt.subplot()
-# ax7.set_title("T vs Nb (Pb/Nb is not constant)")
-# ax7.set_yscale("log")
-# graph7 = ax7.pcolormesh(Tvals,Nbvals,grid7)
-# bar = fig7.colorbar(graph7)
+#Graph 6:
+fig6 = plt.figure(figsize = (10,10))
+ax6= plt.subplot()
+ax6.set_title("E vs Nb (Pb/Nb is constant)")
+ax6.set_xlabel("Energy Difference")
+ax6.set_ylabel("Hole Density")
+ax6.set_yscale("log")
+graph6 = ax6.pcolormesh(Evals,Nbvals,grid6)
+bar = fig6.colorbar(graph6)
 
 
-# #Graph 8:
-# fig8 = plt.figure(figsize = (10,10))
-# ax8= plt.subplot()
-# ax8.set_title("E vs Nb (Pb/Nb is not constant)")
-# ax8.set_yscale("log")
-# graph8 = ax8.pcolormesh(Evals,Nbvals,grid8)
-# bar = fig8.colorbar(graph8)
+#Graph 7:
+fig7 = plt.figure(figsize = (10,10))
+ax7= plt.subplot()
+ax7.set_title("T vs Nb (Pb/Nb is not constant)")
+ax7.set_xlabel("Temperature")
+ax7.set_ylabel("Carrier Density")
+ax7.set_yscale("log")
+graph7 = ax7.pcolormesh(Tvals,Nbvals,grid7)
+bar = fig7.colorbar(graph7)
+
+
+#Graph 8:
+fig8 = plt.figure(figsize = (10,10))
+ax8= plt.subplot()
+ax8.set_title("E vs Nb (Pb/Nb is not constant)")
+ax8.set_xlabel("Energy Difference")
+ax8.set_ylabel("Carrier Density")
+ax8.set_yscale("log")
+graph8 = ax8.pcolormesh(Evals,Nbvals,grid8)
+bar = fig8.colorbar(graph8)
 
 #Graph 9:
 fig9 = plt.figure(figsize = (10,10))
 ax9= plt.subplot()
 ax9.set_title("T vs Pb (Pb/Nb is not constant)")
+ax9.set_xlabel("Temperature")
+ax9.set_ylabel("Hole Density")
 ax9.set_yscale("log")
 graph9 = ax9.pcolormesh(Tvals,Nbvals,grid9)
 bar = fig9.colorbar(graph9)
@@ -267,6 +285,8 @@ bar = fig9.colorbar(graph9)
 fig10 = plt.figure(figsize = (10,10))
 ax10= plt.subplot()
 ax10.set_title("E vs Pb (Pb/Nb is not constant)")
+ax10.set_xlabel("Energy Difference")
+ax10.set_ylabel("Hole Density")
 ax10.set_yscale("log")
 graph10 = ax10.pcolormesh(Evals,Nbvals,grid10)
 bar = fig10.colorbar(graph10)
