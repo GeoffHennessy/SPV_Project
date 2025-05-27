@@ -192,6 +192,7 @@ xticks = np.arange(-0.4-0.4,0.2)
 yticks = np.arange(100,400,50)
 graph1 = ax1.pcolormesh(Evals,Tvals,grid1)
 bar = fig1.colorbar(graph1)
+fig1.savefig("Code\Figures\ET_Heat_Map.png")
 
 #Graph 2:
 fig2 = plt.figure(figsize = (10,10))
@@ -203,7 +204,7 @@ ax2.set_xscale("log")
 ax2.set_yscale("log")
 graph2 = ax2.pcolormesh(Pbvals,Nbvals,grid2)
 bar = fig2.colorbar(graph2)
-
+fig2.savefig("Code\Figures\PbNb_Heat_Map.png")
 
 #Graph 3:
 fig3 = plt.figure(figsize = (10,10))
@@ -214,7 +215,7 @@ ax3.set_ylabel("Hole Density")
 ax3.set_yscale("log")
 graph3 = ax3.pcolormesh(Tvals,Pbvals,grid3)
 bar = fig3.colorbar(graph3)
-
+fig3.savefig("Code\Figures\TPb_Heat_Map")
 
 #Graph 4:
 fig4 = plt.figure(figsize = (10,10))
@@ -225,7 +226,7 @@ ax4.set_ylabel("Hole Density")
 ax4.set_yscale("log")
 graph4 = ax4.pcolormesh(Evals,Pbvals,grid4)
 bar = fig4.colorbar(graph4)
-
+fig4.savefig("Code\Figures\EPb_Heat_Map")
 
 #Graph 5:
 fig5 = plt.figure(figsize = (10,10))
@@ -236,7 +237,7 @@ ax5.set_ylabel("Carrier Density")
 ax5.set_yscale("log")
 graph5 = ax5.pcolormesh(Tvals,Nbvals,grid5)
 bar = fig5.colorbar(graph5)
-
+fig5.savefig("Code\Figures\TNB_Heat_Map_constant.png")
 
 #Graph 6:
 fig6 = plt.figure(figsize = (10,10))
@@ -247,7 +248,7 @@ ax6.set_ylabel("Hole Density")
 ax6.set_yscale("log")
 graph6 = ax6.pcolormesh(Evals,Nbvals,grid6)
 bar = fig6.colorbar(graph6)
-
+fig6.savefig("Code\Figures\ENb_Heat_Map_consant.png")
 
 #Graph 7:
 fig7 = plt.figure(figsize = (10,10))
@@ -258,7 +259,7 @@ ax7.set_ylabel("Carrier Density")
 ax7.set_yscale("log")
 graph7 = ax7.pcolormesh(Tvals,Nbvals,grid7)
 bar = fig7.colorbar(graph7)
-
+fig7.savefig("Code\Figures\TNb_Heat_Map_notconstant.png")
 
 #Graph 8:
 fig8 = plt.figure(figsize = (10,10))
@@ -269,6 +270,7 @@ ax8.set_ylabel("Carrier Density")
 ax8.set_yscale("log")
 graph8 = ax8.pcolormesh(Evals,Nbvals,grid8)
 bar = fig8.colorbar(graph8)
+fig8.savefig("Code\Figures\ENb_Heat_Map_notconstant")
 
 #Graph 9:
 fig9 = plt.figure(figsize = (10,10))
@@ -279,7 +281,7 @@ ax9.set_ylabel("Hole Density")
 ax9.set_yscale("log")
 graph9 = ax9.pcolormesh(Tvals,Nbvals,grid9)
 bar = fig9.colorbar(graph9)
-
+fig9.savefig("Code\Figures\TPb_Heat_Map_notconstant")
 
 #Graph 10:
 fig10 = plt.figure(figsize = (10,10))
@@ -290,4 +292,6 @@ ax10.set_ylabel("Hole Density")
 ax10.set_yscale("log")
 graph10 = ax10.pcolormesh(Evals,Nbvals,grid10)
 bar = fig10.colorbar(graph10)
-plt.show()
+fig10.savefig("Code\Figures\EPb_Heat_Map_notconstant")
+
+# plt.show()

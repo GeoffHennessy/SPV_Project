@@ -315,6 +315,7 @@ ax1.plot(VVals,QscVals, c = "blue", label = "Qsc")
 ax1.set_yscale("log")
 ax1.set_xlabel("Surface Potential (V)")
 ax1.set_ylabel("Charge Densities (C/cm)")
+fig1.savefig("Code\Figures\Intersection_Graph.png")
 ax1.legend()
 
 # Graph 2
@@ -324,6 +325,7 @@ ax2.plot(TVals,VT_Vals)
 ax2.set_title("Surface Voltage vs Temperature")
 ax2.set_xlabel("Temperature (k)")
 ax2.set_ylabel("Surface Voltage (V)")
+fig2.savefig("Code\Figures\Voltage_Temp.png")
 
 # Graph 3
 fig3 = plt.figure(figsize = (10,10))
@@ -332,6 +334,7 @@ ax3.plot(EVals, VE_Vals)
 ax3.set_title("Surface Voltage vs Energy Difference")
 ax3.set_xlabel("Energy (J)")
 ax3.set_ylabel("Surface Voltage (V)")
+fig3.savefig("Code\Figures\Voltage_E.png")
 
 # Graph 4
 fig4 = plt.figure(figsize = (10,10))
@@ -341,7 +344,7 @@ ax4.plot(PbVals, VPb_Vals)
 ax4.set_title("Surface Voltage vs Hole Density")
 ax4.set_xlabel("Hole Density (C/cm)")
 ax4.set_ylabel("Surface Voltage (V)")
-
+fig4.savefig("Code\Figures\V_Pb.png")
 
 # Graph 5
 fig5 = plt.figure(figsize = (10,10))
@@ -351,7 +354,7 @@ ax5.plot(NbVals, VNb_Vals)
 ax5.set_title("Surface Voltage vs Carrier Density")
 ax5.set_xlabel("Carrier Density (C/cm)")
 ax5.set_ylabel("Surface Voltage (V)")
-
+fig5.savefig("Code\Figures\V_Nb.png")
 
 # Graph 6
 
@@ -366,6 +369,7 @@ ax6.plot(EVals,VE_data3, label = "T = 200")
 ax6.plot(EVals,VE_data4, label = "T = 250")
 ax6.plot(EVals,VE_data5, label = "T = 300")
 ax6.plot(EVals,VE_data6, label = "T = 350")
+fig6.savefig("Code\Figures\E_T_Cross_Sections.png")
 
 # Graph 7
 
@@ -382,7 +386,7 @@ ax7.plot(PbVals,VPBT_data4, label = "T = 250")
 ax7.plot(PbVals,VPBT_data5, label = "T = 300")
 ax7.plot(PbVals,VPBT_data6, label = "T = 350")
 ax7.legend()
-
+fig7.savefig("Code\Figures\Pb_T_Cross_Sections.png")
 # Graph 8
 
 fig8 = plt.figure(figsize = (10,10))
@@ -398,10 +402,9 @@ ax8.plot(PbVals,VPBE_data4, label = "E = 0.2")
 ax8.plot(PbVals,VPBE_data5, label = "E = 0.4")
 ax8.plot(PbVals,VPBE_data6, label = "E = 0.6")
 ax8.legend()
-
+fig8.savefig("Code\Figures\Pb_E_Cross_Sections.png")
 
 # Graph 9
-
 fig9 = plt.figure(figsize = (10,10))
 ax9 = plt.subplot()
 ax9.set_xscale("log")
@@ -415,6 +418,7 @@ ax9.plot(NbVals,VNbT_data4, label = "T = 250")
 ax9.plot(NbVals,VNbT_data5, label = "T = 300")
 ax9.plot(NbVals,VNbT_data6, label = "T = 350")
 ax9.legend()
+fig9.savefig("Code\Figures\Carrier_T_Cross_Sections.png")
 
 # Graph 10
 
@@ -431,6 +435,7 @@ ax10. plot(NbVals,VNbE_data4, label = "E = 0.2")
 ax10. plot(NbVals,VNbE_data5, label = "E = 0.4")
 ax10. plot(NbVals,VNbE_data6, label = "E = 0.6")
 ax10.legend()
+fig10.savefig("Code\Figures\Carrier_E_Cross_Sections.png")
 
 # Graph 11
 
@@ -446,5 +451,5 @@ ax11. plot(NbVals,VNbPb_data3, label = "Pb = 1e15")
 ax11. plot(NbVals,VNbPb_data4, label = "Pb = 1e18")
 ax11. plot(NbVals,VNbPb_data5, label = "Pb = 1e21")
 ax11.legend()
-
-plt.show()
+fig11.savefig("Code\Figures\Carrier_Pb_Cross_Sections.png")
+# plt.show()
